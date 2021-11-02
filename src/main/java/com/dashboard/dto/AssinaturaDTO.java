@@ -14,6 +14,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @Builder
@@ -40,7 +41,7 @@ public class AssinaturaDTO {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", locale = "pt-BR", timezone = "Brazil/East")
     private LocalDate dataVencimento;
     @CreatedDate
-    private LocalDate createdAt;
+    private Date createdAt;
     @NotNull
     private Status status;
 }

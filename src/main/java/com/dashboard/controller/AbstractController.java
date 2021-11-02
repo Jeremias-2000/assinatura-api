@@ -2,6 +2,7 @@ package com.dashboard.controller;
 
 import com.dashboard.dto.AssinaturaDTO;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -18,7 +19,7 @@ public interface AbstractController {
 
     @GetMapping("/find/{id}")
     @ApiOperation(value = "Mostra uma assinatura em específico")
-    ResponseEntity<?> findAssinaturaById(@PathVariable("id") String id);
+    ResponseEntity<?> findAssinaturaById(@PathVariable("id") String id) throws ChangeSetPersister.NotFoundException;
 
     @PostMapping("/add")
     @ApiOperation(value = "Cria uma nova assinatura")

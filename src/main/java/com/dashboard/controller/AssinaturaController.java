@@ -4,6 +4,7 @@ import com.dashboard.dto.AssinaturaDTO;
 import com.dashboard.service.AssinaturaServiceImpl;
 import io.swagger.annotations.Api;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +25,7 @@ public class AssinaturaController implements AbstractController {
     }
 
     @Override
-    public ResponseEntity<?> findAssinaturaById(String id) {
+    public ResponseEntity<?> findAssinaturaById(String id)  {
         return ResponseEntity.ok(serviceImpl.findAssinaturaById(id));
     }
 
